@@ -2,9 +2,9 @@ import React from "react";
 
 export type TodoListPropsType = {
     title: string
-    tasks: Array<TasksType>
+    tasks: Array<TaskType>
 }
-export type TasksType = {
+export type TaskType = {
     id: string
     title: string
     isDone: boolean
