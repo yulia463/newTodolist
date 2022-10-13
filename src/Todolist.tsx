@@ -11,8 +11,6 @@ export type TaskType = {
 }
 
 function TodoList(props: TodoListPropsType) {
-
-
     return (
         <div>
             <h3>{props.title}</h3>
@@ -21,8 +19,8 @@ function TodoList(props: TodoListPropsType) {
                 <button>+</button>
             </div>
             <ul>
-                {props.tasks.map((task)=>{
-                    return(
+                {props.tasks.map((task) => {
+                    return (
                         <li key={task.id}><input type={'checkbox'} checked={task.isDone}/><span>{task.title}</span></li>
                     )
                 })}
