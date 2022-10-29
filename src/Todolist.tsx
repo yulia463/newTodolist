@@ -1,16 +1,24 @@
 import React, {useState} from "react";
 import {FilterValuesType} from "./App";
+import {v1} from "uuid";
 
+export type TodoListType = {
+    id: string
+    filter: string
+    title: string
+}
 
 export type TodoListPropsType = {
     title: string
     tasks: Array<TaskType>
-    removeTask: (taskId: number) => void
+    removeTask: (taskId: string) => void
     changeFilter: (value: FilterValuesType) => void
     setTasks: (tasks: Array<TaskType>) => void
+    id: string
+    filter:string
 }
 export type TaskType = {
-    id: number
+    id: string
     title: string
     isDone: boolean
 }
@@ -27,7 +35,7 @@ function TodoList(props: TodoListPropsType) {
 
         props.setTasks([
             {
-                id: props.tasks.length ? props.tasks.length + 1 : 1,
+                id: v1(),
                 title: text,
                 isDone: false
             },
